@@ -1,0 +1,6 @@
+@Service.Multimedia.UltraMedia_HostAddress = http://localhost:5079
+
+GET {{Service.Multimedia.UltraMedia_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
