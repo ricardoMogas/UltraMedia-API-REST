@@ -1,0 +1,35 @@
+
+{
+    "CommantInit": "Hola",
+    "message": "Escribe algunas de las opciones y espera respuesta",
+    "action" : "options",
+    "options": [
+        {
+            "CommantInit": "Opcion 1",
+            "message": "Has seleccionado la opcion 1 y tiene opciones",
+            "action": "options",
+            "options": {
+                "CommantInit": "Opcion 1.1",
+                "message": "esta opciones genera una accion",
+                "action": "funtion",
+                "funtion": {
+                    "name" : "ObtenerDatos",
+                    "params": {
+                        "param1": "valor1",
+                        "param2": "valor2"
+                    }
+                }
+            }
+        },
+        {
+            "CommantInit": "Opcion 2",
+            "message": "Has seleccionado la opcion 1",
+            "action": null
+        },
+        {
+            "CommantInit": "Opcion 3",
+            "message": "Has seleccionado la opcion 1",
+            "action": null
+        }
+    ]
+}
