@@ -1,9 +1,6 @@
-﻿using Dicom;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Service.Multimedia.UltraMedia.DTO;
 using Service.Multimedia.UltraMedia.Service;
-using SixLabors.ImageSharp.Formats.Png;
-using SixLabors.ImageSharp.PixelFormats;
 using System.Net;
 
 namespace Service.Multimedia.UltraMedia.Controllers
@@ -52,27 +49,6 @@ namespace Service.Multimedia.UltraMedia.Controllers
 			}
 
 			return Ok(response);
-		}
-
-		[HttpPost("convert")]
-		public async Task<IActionResult> ConvertDicomToPng(IFormFile dicomFile)
-		{
-			using (var ms = new MemoryStream())
-			{
-				dicomFile.CopyTo(ms);
-				var dicomImage = new DicomImage(DicomFile.Open(ms).Dataset);
-				var renderedImage = dicomImage.RenderImage();
-
-				// Convertir el DicomImage a una imagen ImageSharp
-				var image = Image.LoadPixelData<Rgba32>(renderedImage.Pixels.Data, renderedImage.Width, renderedImage.Height);
-
-				// Guardar la imagen en el sistema de archivos local
-				var filePath = Path.Combine("C:\\ruta\\a\\tu\\directorio", "imagen.png");
-				image.Save(filePath, new PngEncoder());
-
-				return Ok("Imagen guardada correctamente");
-			}
-
 		}
 
 		/// <summary>

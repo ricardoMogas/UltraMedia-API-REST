@@ -1,6 +1,7 @@
 ﻿
 using Google.Apis.Auth.OAuth2;
 using Google.Cloud.Storage.V1;
+using Service.Multimedia.UltraMedia.Const;
 using Object = Google.Apis.Storage.v1.Data.Object;
 
 namespace Service.Multimedia.UltraMedia.Repository.Imp
@@ -22,13 +23,13 @@ namespace Service.Multimedia.UltraMedia.Repository.Imp
 			throw new NotImplementedException();
 		}
 
-		/*public async Task GetFilebByTelephone(long telephone)
+		public async Task GetFilebByTelephone(int patientId)
 		{
 			var files = _storageClient.ListObjects(bucketName);
 
 			foreach (var obj in files)
 			{
-				if (obj.Metadata != null && obj.Metadata.ContainsKey(Metadata.TELEPHONE_KEY) && obj.Metadata[Metadata.TELEPHONE_KEY] == telephone.ToString())
+				if (obj.Metadata != null && obj.Metadata.ContainsKey(Metadata.ID_PATIENT) && obj.Metadata[Metadata.ID_PATIENT] == patientId.ToString())
 				{
 					var localPath = Path.Combine("C:\\Users\\kevin\\Downloads", obj.Name);
 					using var outputFile = File.OpenWrite(localPath);
@@ -36,7 +37,7 @@ namespace Service.Multimedia.UltraMedia.Repository.Imp
 					return;
 				}
 			}
-		}*/
+		}
 
 		public async Task<string> UploadImageAsync(Stream imageStream, Object objectOptions)
 		{

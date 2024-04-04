@@ -6,6 +6,6 @@ namespace Service.Multimedia.UltraMedia.Repository
 	{
 		Task<string> UploadImageAsync(Stream imageStream, Object objectOptions);
 		Task DeleteFileAsync(string fileNameForStorage);
-		//Task GetFilebByTelephone(long telephone);
+		Task GetFilebByTelephone(int patienrId);
 	}
 }
