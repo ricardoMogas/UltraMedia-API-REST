@@ -1,4 +1,4 @@
-﻿using FellowOakDicom;
+﻿using Dicom;
 using Service.Multimedia.UltraMedia.Models;
 
 namespace Service.Multimedia.UltraMedia.Service

@@ -1,5 +1,5 @@
-﻿using FellowOakDicom;
-using FellowOakDicom.Imaging;
+﻿using Dicom;
+using Dicom.Imaging;
 using Service.Multimedia.UltraMedia.Const;
 using Service.Multimedia.UltraMedia.Models;
 using Service.Multimedia.UltraMedia.Repository;
